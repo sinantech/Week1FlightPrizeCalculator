@@ -9,7 +9,7 @@ public class FlightPriceCalculator {
         int flight;
         int age;
         double price;
-        double tax = 1.20;
+        final double tax = 1.20;
 
         // Taking flight information from the user
         // To avoid a confusion I added scanner classes through variables
