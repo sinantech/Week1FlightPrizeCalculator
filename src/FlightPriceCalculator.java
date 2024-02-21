@@ -40,12 +40,12 @@ public class FlightPriceCalculator {
         switch (flight) {
 
             case 1:
-                if (age >= 0 && age <= 7) {
-                    System.out.println("Fee : " + (price * 0.6) + " Euro ");
-                } else if (age >= 18 && age <= 24) {
+                if (age >= 0 && age <= 12) {
+                    System.out.println("Fee : " + (price * 0.5) + " Euro ");
+                } else if (age >= 12 && age <= 24) {
                     System.out.println("Fee : " + (price * 0.9) + " Euro ");
                 } else if (age >= 65) {
-                    System.out.println("Fee : " + (price * 0.8) + " Euro ");
+                    System.out.println("Fee : " + (price * 0.7) + " Euro ");
                 } else if (age < 0 || distance < 0) {
                     System.out.println("Distance And Age Cannot Be Below Zero You Asamoah");
                 } else {
@@ -54,16 +54,16 @@ public class FlightPriceCalculator {
                 break;
 
             case 2:
-                if (age >= 0 && age <= 7) {
-                    System.out.println(" Fee " + (price * 0.6 * 2) + " Euro ");
-                } else if (age >= 18 && age <= 24) {
-                    System.out.println(" Fee " + (price * 0.9 * 2) + " Euro ");
+                if (age >= 0 && age < 12) {
+                    System.out.println(" Fee " + (price * 0.5 * 2 * 0.8) + " Euro ");
+                } else if (age >= 12 && age <= 24) {
+                    System.out.println(" Fee " + (price * 0.9 * 2 * 0.8) + " Euro ");
                 } else if (age >= 65) {
-                    System.out.println(" Fee " + (price * 0.8 * 2) + " Euro ");
+                    System.out.println(" Fee " + (price * 0.7 * 2 * 0.8) + " Euro ");
                 } else if (age < 0 || distance < 0) {
                     System.out.println("Distance And Age Cannot Be Below Zero You Schweinsteiger");
                 } else {
-                    System.out.println(" Fee " + (price * 2) + " Euro ");
+                    System.out.println(" Fee " + ((price * 2) * 0.8) + " Euro ");
                 }
                 break;
         }
