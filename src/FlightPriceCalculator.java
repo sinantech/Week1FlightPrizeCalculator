@@ -24,11 +24,12 @@ public class FlightPriceCalculator {
         Scanner ages = new Scanner(System.in);
         age = ages.nextInt();
 
-        System.out.println("Please Enter Your Flight Type : ");
+
+        System.out.println("Please Enter Your Flight Type 1-One Way 2-Round Trip : ");
         Scanner type = new Scanner(System.in);
         flight = type.nextInt();
 
-        price = (distance * 0.95) * tax;
+        price = (distance * 0.1) * tax;
 
         // I am using switch case construct because it seems much easy to me
         // If you want to use if else construct it is similar to switch case
@@ -37,35 +38,36 @@ public class FlightPriceCalculator {
         // Flight Type 1 = One Way 2 = Round Trip selection
         // Ucus Tipi 1 = Tek Yon  = Gidis-Donus secimi
 
-        switch (flight) {
+        if (distance < 0 || age < 0 || (flight != 1 && flight != 2)) {
+            System.out.println("Wrong Choice ! ");
+        } else {
+            switch (flight) {
 
-            case 1:
-                if (age >= 0 && age <= 12) {
-                    System.out.println("Fee : " + (price * 0.5) + " Euro ");
-                } else if (age >= 12 && age <= 24) {
-                    System.out.println("Fee : " + (price * 0.9) + " Euro ");
-                } else if (age >= 65) {
-                    System.out.println("Fee : " + (price * 0.7) + " Euro ");
-                } else if (age < 0 || distance < 0) {
-                    System.out.println("Distance And Age Cannot Be Below Zero You Asamoah");
-                } else {
-                    System.out.println(" Fee " + price + " Euro");
-                }
-                break;
+                case 1:
+                    if (age < 12) {
+                        System.out.println("Fee : " + (price * 0.5) + " TL ");
+                    } else if (age <= 24) {
+                        System.out.println("Fee : " + (price * 0.9) + " TL ");
+                    } else if (age >= 65) {
+                        System.out.println("Fee : " + (price * 0.7) + " TL ");
+                    } else {
+                        System.out.println(" Fee " + price + " TL ");
+                    }
+                    break;
 
-            case 2:
-                if (age >= 0 && age < 12) {
-                    System.out.println(" Fee " + (price * 0.5 * 2 * 0.8) + " Euro ");
-                } else if (age >= 12 && age <= 24) {
-                    System.out.println(" Fee " + (price * 0.9 * 2 * 0.8) + " Euro ");
-                } else if (age >= 65) {
-                    System.out.println(" Fee " + (price * 0.7 * 2 * 0.8) + " Euro ");
-                } else if (age < 0 || distance < 0) {
-                    System.out.println("Distance And Age Cannot Be Below Zero You Schweinsteiger");
-                } else {
-                    System.out.println(" Fee " + ((price * 2) * 0.8) + " Euro ");
-                }
-                break;
+                case 2:
+                    if (age < 12) {
+                        System.out.println(" Fee " + (price * 0.5 * 2 * 0.8) + " TL ");
+                    } else if (age <= 24) {
+                        System.out.println(" Fee " + (price * 0.9 * 2 * 0.8) + " TL ");
+                    } else if (age >= 65) {
+                        System.out.println(" Fee " + (price * 0.7 * 2 * 0.8) + " TL ");
+                    } else {
+                        System.out.println(" Fee " + ((price * 2) * 0.8) + " TL ");
+                    }
+                    break;
+            }
         }
+
     }
 }
